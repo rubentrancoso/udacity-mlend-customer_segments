@@ -1,0 +1,51 @@
+#!/bin/bash
+# in a terminal execute './help loop'
+# and start editing this file in you IDE
+
+function loop {
+	if [ "$1" = "loop" ]; then
+		while :
+		do
+			./help
+			sleep 1
+		done
+        else
+		display
+	fi	
+}
+
+function display {
+	clear
+	echo -e "CONDA\n"
+	echo -e "- version"
+	echo -e "   $ conda --version"
+	echo -e "- list environments"
+	echo -e "   $ conda env list"
+	echo -e "- list packages"
+	echo -e "   $ conda list"
+    echo -e "- delete environment"
+    echo -e "   $ conda env remove -n ENVNAME -y"
+    echo -e "- create environment"
+    echo -e "   $ conda create --name ENVNAME python=2.7 -y"
+    echo -e "- install packages"
+    echo -e "   $ conda install numpy pandas scikit-learn=0.17.1 matplotlib scipy=0.18.1 seaborn -y"
+    echo -e "- activate/deactivate environment"
+    echo -e "   $ source activate ENVNAME"
+    echo -e "   $ source deactivate"
+    echo -e "- info"
+    echo -e "   $ conda info --envs"
+    echo -e "- update conda"
+    echo -e "   $ conda update conda"
+    echo -e "\nJUPYTER\n"
+    echo -e "- run jupyter notebook"
+    echo -e "   $ jupyter notebook\n"
+    echo -e "Using this environment"
+    echo -e ""
+    echo -e "   $ conda create --name customersegments python=3.6 -y"
+    echo -e "   $ source activate customersegments"
+    echo -e "   $ conda install numpy pandas scikit-learn matplotlib seaborn -y"
+    echo -e "   $ conda install nb_conda"    
+    echo -e ""
+}
+
+loop $1
